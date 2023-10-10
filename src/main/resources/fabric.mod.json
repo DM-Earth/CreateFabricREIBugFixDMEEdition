@@ -1,15 +1,18 @@
 {
   "schemaVersion": 1,
-  "id": "createreibugfix",
+  "id": "createreibugfix_dme",
   "version": "${version}",
-  "name": "CreateFabric&REIBugFix",
+  "name": "CreateFabric&REIBugFix DM-Earth Edition",
   "description": "Fix CreateFabric Recipe display on REI issues. Code from Create's Delight by Phoupraw.",
   "authors": [
-    "TexTrue, HO-Artisan, Phoupraw"
+    "DM-Earth",
+    "TexTrue",
+    "HO-Artisan",
+    "Phoupraw"
   ],
   "contact": {
-    "homepage": "https://github.com/HO-Artisan/Create-REIBugFix",
-    "sources": "https://github.com/HO-Artisan/Create-REIBugFix"
+    "homepage": "https://github.com/DM-Earth/create-fabric-rei-fix-dme-edition",
+    "sources": "https://github.com/DM-Earth/create-fabric-rei-fix-dme-edition"
   },
   "license": "MIT",
   "icon": "assets/createreibugfix/icon.png",

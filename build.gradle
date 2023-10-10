@@ -20,7 +20,6 @@ repositories {
 	maven { url = "https://maven.shedaniel.me/" } // Cloth Config, REI
 	maven { url = "https://jitpack.io/" } // Mixin Extras, Fabric ASM
 	maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
-
 	maven { url = "https://maven.quiltmc.org/repository/release" } // QM
 	maven { url = "https://maven.parchmentmc.org" } // Parchment
 }
@@ -31,14 +30,13 @@ dependencies {
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	modImplementation("com.simibubi.create:create-fabric-${project.minecraft_version}:${project.create_version}") {
-		exclude(Map.of("module", "forge-config-api-port-fabric-547434"))
-		exclude(group: "io.github.fabricators_of_create")
-	}
+	//modImplementation("com.simibubi.create:create-fabric-${project.minecraft_version}:${project.create_version}") {
+	//	exclude(Map.of("module", "forge-config-api-port-fabric-547434"))
+	//	exclude(group: "io.github.fabricators_of_create")
+	//}
+	modImplementation "maven.modrinth:create-fabric-dme-edition:${project.create_version}"
 	modImplementation "io.github.fabricators_of_create.Porting-Lib:Porting-Lib:${project.portinglib_version}"
-	modLocalRuntime "maven.modrinth:forge-config-api-port:${project.forgeconfigapiport_version}"
 
-	include(modImplementation("com.github.Fallen-Breath:conditional-mixin:${project.conditionalmixin_version}"))
 	modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
 }
 

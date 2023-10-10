@@ -30,7 +30,7 @@ import com.simibubi.create.content.kinetics.crusher.AbstractCrushingRecipe;
 
 import ho.artisan.createreibugfix.utils.REICreateUtils;
 
-import io.github.fabricators_of_create.porting_lib.util.FluidStack;
+import io.github.fabricators_of_create.porting_lib.fluids.FluidStack;
 
 import me.shedaniel.math.Point;
 import me.shedaniel.math.Rectangle;

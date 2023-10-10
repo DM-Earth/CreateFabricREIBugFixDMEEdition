@@ -29,7 +29,6 @@ import com.simibubi.create.content.processing.basin.BasinRecipe;
 import com.simibubi.create.foundation.fluid.FluidIngredient;
 import com.simibubi.create.foundation.utility.Pair;
 
-import ho.artisan.createreibugfix.utils.StringUtils;
 import ho.artisan.createreibugfix.utils.REICreateUtils;
 
 import me.shedaniel.math.Point;
@@ -45,9 +44,6 @@ import org.apache.commons.lang3.mutable.MutableInt;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
-import me.fallenbreath.conditionalmixin.api.annotation.Condition;
-import me.fallenbreath.conditionalmixin.api.annotation.Restriction;
-
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -56,10 +52,8 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
 
-
 import java.util.List;
 
-@Restriction(conflict = @Condition(StringUtils.createsdelight_modid))
 @Mixin(BasinCategory.class)
 @Environment(EnvType.CLIENT)
 public class BasinCategoryMixin {
@@ -67,7 +61,7 @@ public class BasinCategoryMixin {
     private final ThreadLocal<FluidIngredient> fluidIngredient = new ThreadLocal<>();
 
     @Inject(method = "addWidgets", at = @At(value = "INVOKE", target = "Lme/shedaniel/rei/api/common/util/EntryIngredients;of(Ldev/architectury/fluid/FluidStack;)Lme/shedaniel/rei/api/common/entry/EntryIngredient;", ordinal = 0, remap = false), locals = LocalCapture.CAPTURE_FAILHARD, remap = false)
-    private void captureVars(CreateDisplay<BasinRecipe> display, List<Widget> widgets, Point origin, CallbackInfo ci, BasinRecipe recipe, DefaultedList<FluidIngredient> fluidIngredients, List<Pair<Ingredient, MutableInt>> ingredients, List<ItemStack> itemOutputs, DefaultedList<io.github.fabricators_of_create.porting_lib.util.FluidStack> fluidOutputs, int size, int xOffset, int yOffset, int i, int j) {
+    private void captureVars(CreateDisplay<BasinRecipe> display, List<Widget> widgets, Point origin, CallbackInfo ci, BasinRecipe recipe, DefaultedList<FluidIngredient> fluidIngredients, List<Pair<Ingredient, MutableInt>> ingredients, List<ItemStack> itemOutputs, DefaultedList<io.github.fabricators_of_create.porting_lib.fluids.FluidStack> fluidOutputs, int size, int xOffset, int yOffset, int i, int j) {
         fluidIngredient.set(fluidIngredients.get(j));
     }
 

@@ -147,12 +147,12 @@ public final class REICreateUtils {
      @author Phoupraw
      */
     @Contract(pure = true)
-    public static @NotNull List<EntryIngredient> resultsOf(@NotNull List<ProcessingOutput> rollableResults, @NotNull DefaultedList<io.github.fabricators_of_create.porting_lib.util.FluidStack> fluidResults) {
+    public static @NotNull List<EntryIngredient> resultsOf(@NotNull List<ProcessingOutput> rollableResults, @NotNull DefaultedList<io.github.fabricators_of_create.porting_lib.fluids.FluidStack> fluidResults) {
         List<EntryIngredient> list = new LinkedList<>();
         for (ProcessingOutput rollableResult : rollableResults) {
             list.add(EntryIngredients.of(rollableResult.getStack().copy()));
         }
-        for (io.github.fabricators_of_create.porting_lib.util.FluidStack fluidResult : fluidResults) {
+        for (io.github.fabricators_of_create.porting_lib.fluids.FluidStack fluidResult : fluidResults) {
             list.add(EntryIngredients.of(FluidStack.create(fluidResult.getFluid(), fluidResult.getAmount(), fluidResult.getTag())));
         }
         return list;

@@ -34,6 +34,10 @@ import org.slf4j.LoggerFactory;
 public class CreateFabricREIBugFixMod implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger(StringUtils.MODNAME);
 
+	public static boolean isREIInstalled() {
+		return FabricLoader.getInstance().isModLoaded("roughlyenoughitems");
+	}
+
 	@Override
 	public void onInitialize() {
 		LOGGER.info(StringUtils.MODNAME + " (" + StringUtils.MODID + ") " + " is loaded!");
